@@ -1,6 +1,6 @@
 {
   "name": "@fishingbooker/react-swiper",
-  "version": "0.1.17",
+  "version": "0.1.0",
   "description": "React Swiper For FishingBooker",
   "main": "lib/index.js",
   "scripts": {
@@ -25,9 +25,11 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.37",
     "@babel/core": "^7.0.0-beta.37",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.37",
-    "@babel/preset-react": "^7.0.0-beta.37",
+    "@babel/preset-react": "^7.0.0-beta.44",
     "babel-loader": "^8.0.0-beta.0",
+    "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.8",
     "html-webpack-plugin": "^2.30.1",
     "react": "^16.2.0",

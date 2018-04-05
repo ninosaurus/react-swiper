@@ -14,8 +14,14 @@ The reason that the folder doesn't have a logical name like `demo` is that GitHu
 
 ## Getting started
 ```
-import ReactRaty from '@fishingbooker/react-raty';
- 
+import ReactSwiper from '@fishingbooker/react-swiper';
+
 export default function ReviewRating(){
-    return <ReactRaty rating={4.48}/>
+    return (
+         <ReactSwiper 
+            component={MyComponent} 
+            header="Header example"
+            withLink={true}
+            items={[...]}/>
+     )
 }
