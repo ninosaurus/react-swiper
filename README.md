@@ -1,9 +1,10 @@
-# React Ratty component boilerplate
+# React Swiper component boilerplate
 
-Required Glyphicons
+Required React-Slick
 
 ### Component library transpilation
 
+Base component used by https://fishingbooker.com
 The library source code, which is located in `src/lib`, is transpiled with Babel but is _not_ bundled with Webpack. Bundling is completely unnecessary, since the developer who will in the end use your library for their application will bundle their entire codebase, which includes your library. More importantly, if your library has any dependencies, bundling them together with your code would be a disaster since it could cause duplication and therefore larger final bundle size. The components still have to be transpiled since many developers have Webpack configured to not transpile their node_modules folder. Some may not be using JSX or ES6 at all, and would therefore be unable to transpile your component.
 
 ### Demo app transpilation
@@ -13,15 +14,21 @@ The demo app source code lives inside the `src/docs` folder. It is transpiled, b
 The reason that the folder doesn't have a logical name like `demo` is that GitHub Pages requires it to be called `docs` for some reason...
 
 ## Getting started
+Example
 ```
-import ReactSwiper from '@fishingbooker/react-swiper';
+import React from "react";
+import ReactDOM from "react-dom";
+import ReactSwiper from "@fishingbooker/react-swiper";
+import RelatedCharter from "./RelatedCharter";
 
-export default function ReviewRating(){
+const Index = (props) => {
     return (
-         <ReactSwiper 
-            component={MyComponent} 
-            header="Header example"
-            withLink={true}
-            items={[...]}/>
-     )
-}
+        <ReactSwiper component={RelatedCharter} items={props.medias} header={props.header} scroll={props.isMobile}/>
+    )
+};
+window.RelatedCharter = {
+    render: function (isMobile, medias, header, element) {
+        ReactDOM.render(<Index isMobile={isMobile} medias={medias} header={header}/>, element);
+    }
+};
+```
